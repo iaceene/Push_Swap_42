@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:57:28 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 02:57:44 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 04:44:27 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int	valid_sing(char *s, int index)
 	if (s[index] != '+' && s[index] != '-')
 		return (0);
 	else if ((s[index] == '+' && !is_number(s[index + 1]))
-		|| (s[index] == '-' && !is_number(s[index + 1])))
+		|| (s[index] == '-' && !is_number(s[index + 1]))
+		|| (is_number(s[index - 1])))
 		return (0);
 	return (1);
 }

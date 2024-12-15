@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 03:18:47 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 05:39:13 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,15 @@ void 	ft_print_list(t_list *stack)
         tmp = tmp->next;
     }
 }
-	
+
+void	f()
+{
+	system("leaks a.out");
+}
 
 int	main(int c, char **v)
 {
+	//atexit(f);
 	t_list	*stack_a;
 	int		check_err;
 
@@ -47,7 +52,7 @@ int	main(int c, char **v)
 	if (c == 1)
 		return (1);
 	else if (c == 2 && ft_check(v[1]))
-		check_err += stack_init(v[1], stack_a);
+		check_err += stack_init(v[1], &stack_a);
 	else if (c >= 3 && ft_mult_check(v + 1, c - 1))
 		printf("hi");
 	else
@@ -55,5 +60,6 @@ int	main(int c, char **v)
 	if (check_err >= 1)
 		ft_putstr("Error\n");
 	ft_print_list(stack_a);
+	ft_lstclear(&stack_a);
 	return (0);
 }
