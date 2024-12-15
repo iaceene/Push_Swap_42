@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:02:45 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 10:23:54 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 10:36:49 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 char	*ft_strjoin(char *s1, char *s2)
 {
+	char	*final;
+
 	if(!s1 && !s2)
 		return (NULL);
 	else if(!s1 && s2)
 		return(ft_strdup(s2));
 	else if(!s2 && s1)
 		return (ft_strdup(s1));
-	char *final;
 	final = malloc(ft_strlen(s1) + ft_strlen(s2) + 2);
 	if(!final)
 		return (NULL);
@@ -59,6 +60,17 @@ int stack_init_mult(char **v, t_list **stack)
 	return (err);
 }
 
+int ft_error(t_list **stack, char *str, int args, char **splite)
+{
+	int	n;
+
+	n = ft_count(str, ' ');
+	ft_free(splite, n);
+	if (args == 1)
+		free(str);
+	ft_lstclear(stack);
+	return (1);
+}
 
 int	stack_init(char *str, t_list **stack, int args)
 {
@@ -68,7 +80,6 @@ int	stack_init(char *str, t_list **stack, int args)
 
 	i = 0;
 	err_check = 0;
-	printf("%s \n", str);
 	numbers = ft_split(str, ' ');
 	if (!numbers)
 	{
@@ -77,15 +88,15 @@ int	stack_init(char *str, t_list **stack, int args)
 		else
 			return (1);
 	}
-	if(args == 1)
-		free(str);
 	while (numbers[i])
 	{
 		if (ft_overflow(numbers[i]) || err_check > 0)
-			return (ft_lstclear(stack), 1);
+			return (ft_error(stack, str, args, numbers));
 		err_check += ft_addback(stack, ft_addnew(ft_atol(numbers[i])));
 		i++;
 	}
 	ft_free(numbers, i);
+	if(args == 1)
+		free(str);
 	return (0);
 }
