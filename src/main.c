@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 11:33:19 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 11:58:23 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,13 @@ void	ft_print_list(t_list *stack)
 	t_list	*tmp;
 
 	tmp = stack;
+	printf("stack : ");
 	while (tmp)
 	{
 		printf("%d ", tmp->data);
 		tmp = tmp->next;
 	}
+	printf("\n");
 }
 
 int	ft_init(int c, char **v, t_list **stack_a)
@@ -50,7 +52,7 @@ int	ft_init(int c, char **v, t_list **stack_a)
 	else if (c >= 3 && ft_mult_check(v + 1, c - 1))
 		check_err += stack_init_mult(v + 1, stack_a);
 	else
-		ft_putstr("Error\n");
+		check_err++;
 	check_err += ft_stack_checker(stack_a);
 	if (check_err >= 1)
 		ft_putstr("Error\n");
@@ -67,7 +69,7 @@ int	main(int c, char **v)
 	t_list	*stack_a;
 	int		check_err;
 
-	atexit(f);
+	//atexit(f);
 	stack_a = NULL;
 	check_err = ft_init(c, v, &stack_a);
 	if (check_err > 0)

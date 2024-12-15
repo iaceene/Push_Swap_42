@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 10:55:34 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 11:45:33 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 typedef struct s_list
 {
 	int				data;
-	int				pos;
 	struct s_list	*next;
 }	t_list;
 

@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:54:31 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 10:12:50 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 11:48:36 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ t_list	*ft_addnew(int data)
 	if (!new)
 		return (NULL);
 	new->data = data;
+	new->next = NULL;
 	return (new);
 }
 
