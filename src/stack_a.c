@@ -9,7 +9,7 @@ int stack_init(char *str, t_list *stack)
         return (1);
     while(i < N)
     {
-        if(ft_atol(numbers[i]) > INT_MAX && ft_atol(numbers[i]) < INT_MAX)
+        if(ft_overflow(numbers[i]))
             return (1);
         printf("%ld\n", ft_atol(numbers[i]));
         i++;

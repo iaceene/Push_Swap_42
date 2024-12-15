@@ -20,6 +20,8 @@ char	**ft_split(char const *s, char c);
 int	ft_count(char *str, char spliter);
 int stack_init(char *str, t_list *stack);
 long ft_atol(char *s);
+int ft_overflow(char *s);
+int ft_strlen(char *s);
 
 #endif
 
