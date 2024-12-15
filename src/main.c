@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 05:39:13 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 10:14:35 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ int	main(int c, char **v)
 	if (c == 1)
 		return (1);
 	else if (c == 2 && ft_check(v[1]))
-		check_err += stack_init(v[1], &stack_a);
+		check_err += stack_init(v[1], &stack_a, 0);
 	else if (c >= 3 && ft_mult_check(v + 1, c - 1))
-		printf("hi");
+		check_err += stack_init_mult(v + 1, &stack_a);
 	else
 		ft_putstr("Error\n");
 	if (check_err >= 1)
