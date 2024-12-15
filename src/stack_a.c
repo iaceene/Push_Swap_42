@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:02:45 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 10:36:49 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 10:40:55 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,43 +15,45 @@
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*final;
+	int		i;
+	int		index;
 
-	if(!s1 && !s2)
+	i = 0;
+	index = 0;
+	if (!s1 && !s2)
 		return (NULL);
-	else if(!s1 && s2)
-		return(ft_strdup(s2));
-	else if(!s2 && s1)
+	else if (!s1 && s2)
+		return (ft_strdup(s2));
+	else if (!s2 && s1)
 		return (ft_strdup(s1));
 	final = malloc(ft_strlen(s1) + ft_strlen(s2) + 2);
-	if(!final)
+	if (!final)
 		return (NULL);
-	int i = 0;
-	int index = 0;
-	while(s1[i])
+	while (s1[i])
 		final[index++] = s1[i++];
 	final[index++] = ' ';
 	i = 0;
-	while(s2[i])
+	while (s2[i])
 		final[index++] = s2[i++];
 	final[index] = '\0';
 	return (final);
 }
 
-int stack_init_mult(char **v, t_list **stack)
+int	stack_init_mult(char **v, t_list **stack)
 {
 	char	*final;
+	char	*tmp;
 	int		err;
 	int		i;
-	char 	*tmp;
 
 	err = 0;
 	i = 0;
 	final = NULL;
-	while(v[i])
+	while (v[i])
 	{
 		tmp = final;
 		final = ft_strjoin(final, v[i]);
-		if(!final)
+		if (!final)
 			return (1);
 		free(tmp);
 		i++;
@@ -60,7 +62,7 @@ int stack_init_mult(char **v, t_list **stack)
 	return (err);
 }
 
-int ft_error(t_list **stack, char *str, int args, char **splite)
+int	ft_error(t_list **stack, char *str, int args, char **splite)
 {
 	int	n;
 
@@ -83,7 +85,7 @@ int	stack_init(char *str, t_list **stack, int args)
 	numbers = ft_split(str, ' ');
 	if (!numbers)
 	{
-		if(args == 1)
+		if (args == 1)
 			return (free(str), 1);
 		else
 			return (1);
@@ -96,7 +98,7 @@ int	stack_init(char *str, t_list **stack, int args)
 		i++;
 	}
 	ft_free(numbers, i);
-	if(args == 1)
+	if (args == 1)
 		free(str);
-	return (0);
+	return (err_check);
 }
