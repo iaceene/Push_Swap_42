@@ -2,12 +2,16 @@
 
 int stack_init(char *str, t_list *stack)
 {
-    char	**numbers = ft_split(str, ' ');
-    int     N = ft_count(str, ' ');
-    int     i = 0;
-    if(!numbers)
+    char	**numbers;
+    int     N;
+    int     i;
+
+    N = ft_count(str, ' ');
+    i = 0;
+    numbers = ft_split(str, ' ');
+    if (!numbers)
         return (1);
-    while(i < N)
+    while (i < N)
     {
         if(ft_overflow(numbers[i]))
             return (1);

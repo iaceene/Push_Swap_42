@@ -22,6 +22,9 @@ int stack_init(char *str, t_list *stack);
 long ft_atol(char *s);
 int ft_overflow(char *s);
 int ft_strlen(char *s);
+t_list	*ft_lstlast(t_list *head);
+int ft_addback(t_list **head, t_list *new);
+t_list *ft_addnew(int data);
 
 #endif
 

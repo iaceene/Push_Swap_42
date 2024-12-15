@@ -1,25 +1,56 @@
 #include "push_swap.h"
 
-int ft_strlen(char *s)
+t_list	*ft_lstlast(t_list *head)
 {
-    int i = 0;
-    while(s[i])
-        i++;
-    return(i);
+	if (!head)
+		return (NULL);
+	while (head && head->next)
+		head = head -> next;
+	return (head);
 }
+
+int ft_addback(t_list **head, t_list *new)
+{
+    t_list	*last_node;
+
+	if (!head || !new)
+		return (1);
+	if (!*head)
+		*head = new;
+	else
+	{
+		last_node = ft_lstlast(*head);
+		last_node -> next = new;
+	}
+    return (0);
+}
+
+t_list *ft_addnew(int data)
+{
+    t_list  *new;
+
+    new = malloc(sizeof(t_list));
+    if(!new)
+        return (NULL);
+    new->data = data;
+    return (new);
+}
+
 
 int ft_buffer(char *s)
 {
     int len = ft_strlen(s);
-    if(len >= ft_strlen("18446744073709551616"))
+    if (len >= ft_strlen("18446744073709551616"))
         return (1);
     return (0);
 }
 
 int ft_overflow(char *s)
 {
-    long n = ft_atol(s);
+    long n;
+
+    n = ft_atol(s);
     if (n > INT_MAX || n < INT_MIN || ft_buffer(s))
         return 1;
-    return 0;
+    return (0);
 }
