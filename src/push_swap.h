@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 10:16:57 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 10:55:34 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		valid_sing(char *s, int index);
 void	ft_putstr(char *s);
 char	*ft_strdup(char *s);
 int		ft_strlen(char *s);
+int		ft_stack_checker(t_list **stack_a);
 int		ft_check(char *s);
 char	**ft_split(char const *s, char c);
 char	**ft_free(char **splites, int index);

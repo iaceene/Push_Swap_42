@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 10:30:51 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 11:25:31 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,25 @@ void 	ft_print_list(t_list *stack)
     }
 }
 
+int ft_init(int c, char **v, t_list **stack_a)
+{
+	int	check_err;
+
+	check_err = 0;
+	if (c == 1)
+		return (1);
+	else if (c == 2 && ft_check(v[1]))
+		check_err += stack_init(v[1], stack_a, 0);
+	else if (c >= 3 && ft_mult_check(v + 1, c - 1))
+		check_err += stack_init_mult(v + 1, stack_a);
+	else
+		ft_putstr("Error\n");
+	check_err += ft_stack_checker(stack_a);
+	if (check_err >= 1)
+		ft_putstr("Error\n");
+	return (check_err);
+}
+
 void	f()
 {
 	system("leaks a.out");
@@ -48,17 +67,9 @@ int	main(int c, char **v)
 	int		check_err;
 
 	stack_a = NULL;
-	check_err = 0;
-	if (c == 1)
-		return (1);
-	else if (c == 2 && ft_check(v[1]))
-		check_err += stack_init(v[1], &stack_a, 0);
-	else if (c >= 3 && ft_mult_check(v + 1, c - 1))
-		check_err += stack_init_mult(v + 1, &stack_a);
-	else
-		ft_putstr("Error\n");
-	if (check_err >= 1)
-		ft_putstr("Error\n");
+	check_err = ft_init(c, v, &stack_a);
+	if(check_err > 0)
+		return (ft_lstclear(&stack_a), 1);
 	ft_print_list(stack_a);
 	ft_lstclear(&stack_a);
 	return (0);

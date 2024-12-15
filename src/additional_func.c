@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putstr.c                                           :+:      :+:    :+:   */
+/*   additional_func.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:01:01 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 10:16:48 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 11:30:11 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,26 @@ void	ft_putstr(char *s)
 		write(1, s + i, 1);
 		i++;
 	}
+}
+
+int	ft_stack_checker(t_list **head)
+{
+	t_list	*tmp;
+	t_list	*curr;
+
+	tmp = *head;
+	while (tmp)
+	{
+		curr = tmp->next;
+		while (curr)
+		{
+			if (curr->data == tmp->data)
+				return (1);
+			curr = curr->next;
+		}
+		tmp = tmp->next;
+	}
+	return (0);
 }
 
 char	*ft_strdup(char *s)
