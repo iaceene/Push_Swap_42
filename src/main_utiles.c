@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:57:28 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 04:44:27 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 17:30:27 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_space(char c)
 {
-	return (c == ' ' || c == '\t' || c == '\r');
+	return (c == ' ');
 }
 
 int	is_number(char c)
