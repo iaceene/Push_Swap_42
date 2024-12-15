@@ -1,26 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/15 03:01:58 by yaajagro          #+#    #+#             */
+/*   Updated: 2024/12/15 03:02:11 by yaajagro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-long ft_atol(char *s)
+long	ft_atol(char *s)
 {
-    int i;
-    int sing;
-    long res;
+	int		i;
+	int		sing;
+	long	res;
 
-    i = 0;
-    res = 0;
-    sing = 1;
-    while(is_space(s[i]))
-        i++;
-    if(s[i] == '+' || s[i] == '-')
-    {
-        if(s[i] == '-')
-            sing = -1;
-        i++;
-    }
-    while(is_number(s[i]))
-    {
-        res = (res * 10) + (s[i] - '0');
-        i++;
-    }
-    return (res * sing);
+	i = 0;
+	res = 0;
+	sing = 1;
+	while (is_space(s[i]))
+		i++;
+	if (s[i] == '+' || s[i] == '-')
+	{
+		if (s[i] == '-')
+			sing = -1;
+		i++;
+	}
+	while (is_number(s[i]))
+	{
+		res = (res * 10) + (s[i] - '0');
+		i++;
+	}
+	return (res * sing);
 }
