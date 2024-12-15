@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 03:00:29 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 03:18:47 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@ int	ft_mult_check(char **v, int c)
 	return (1);
 }
 // check_err += stack_init_mult(v + 1, c - 1, stack_a);
+void 	ft_print_list(t_list *stack)
+{
+	t_list *tmp = stack;
+	while(tmp)
+    {
+        printf("%d ", tmp->data);
+        tmp = tmp->next;
+    }
+}
+	
 
 int	main(int c, char **v)
 {
@@ -44,5 +54,6 @@ int	main(int c, char **v)
 		ft_putstr("Error\n");
 	if (check_err >= 1)
 		ft_putstr("Error\n");
+	ft_print_list(stack_a);
 	return (0);
 }

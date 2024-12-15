@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:02:45 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 03:03:40 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/15 03:19:26 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,20 @@ int	stack_init(char *str, t_list *stack)
 {
 	char	**numbers;
 	int		i;
+	int		err_check;
 
 	i = 0;
+	err_check = 0;
 	numbers = ft_split(str, ' ');
 	if (!numbers)
 		return (1);
 	while (numbers[i])
 	{
 		if (ft_overflow(numbers[i]))
-			return (1);
-		printf("%ld\n", ft_atol(numbers[i]));
+			return (ft_lstclear(&stack), 1);
+		err_check = ft_addback(&stack, ft_addnew(ft_atol(numbers[i])));
 		i++;
 	}
+	ft_free(numbers, i);
 	return (0);
 }
