@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:01:01 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 11:23:42 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 12:02:00 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_stack_checker(t_list **head)
 	t_list	*curr;
 
 	if (!*head || !head)
-		return ;
+		return (1);
 	tmp = *head;
 	while (tmp)
 	{

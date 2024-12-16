@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 11:21:40 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 18:43:54 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ int	ft_init(int c, char **v, t_list **stack_a)
 		check_err += stack_init_mult(v + 1, stack_a);
 	else
 		check_err++;
-	check_err += ft_stack_checker(stack_a);
 	if (check_err >= 1)
 		print_err("Error\n");
+	check_err += ft_stack_checker(stack_a);
 	return (check_err);
 }
 
@@ -66,11 +66,10 @@ void	f(void)
 
 int	main(int c, char **v)
 {
+	int		check_err;
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int		check_err;
 
-	atexit(f);
 	stack_a = NULL;
 	stack_b = NULL;
 	check_err = ft_init(c, v, &stack_a);
