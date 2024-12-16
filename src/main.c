@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 11:17:50 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 11:21:40 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,15 @@ void	f(void)
 int	main(int c, char **v)
 {
 	t_list	*stack_a;
+	t_list	*stack_b;
 	int		check_err;
 
 	atexit(f);
 	stack_a = NULL;
+	stack_b = NULL;
 	check_err = ft_init(c, v, &stack_a);
 	if (check_err > 0)
 		return (ft_lstclear(&stack_a), 1);
 	ft_print_list(stack_a);
-	ft_lstclear(&stack_a);
-	return (0);
+	return (ft_lstclear(&stack_a), ft_lstclear(&stack_b), 0);
 }

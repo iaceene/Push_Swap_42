@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:01:58 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 03:02:11 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 11:24:19 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ long	ft_atol(char *s)
 	int		sing;
 	long	res;
 
+	if (!s)
+		return (0);
 	i = 0;
 	res = 0;
 	sing = 1;

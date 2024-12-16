@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:01:01 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 11:19:37 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 11:23:42 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr(char *s)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ;
 	while (s[i])
 	{
 		write(1, s + i, 1);
@@ -29,6 +31,8 @@ void	print_err(char *s)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ;
 	while (s[i])
 	{
 		write(2, s + i, 1);
@@ -41,6 +45,8 @@ int	ft_stack_checker(t_list **head)
 	t_list	*tmp;
 	t_list	*curr;
 
+	if (!*head || !head)
+		return ;
 	tmp = *head;
 	while (tmp)
 	{
@@ -62,6 +68,8 @@ char	*ft_strdup(char *s)
 	size_t	len;
 	char	*dest;
 
+	if (!s)
+		return (NULL);
 	len = ft_strlen(s);
 	i = 0;
 	dest = malloc(len + 1);

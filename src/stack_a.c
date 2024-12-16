@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:02:45 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 11:22:05 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 11:31:08 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	stack_init_mult(char **v, t_list **stack)
 	int		err;
 	int		i;
 
+	if (!v || !stack)
+		return (1);
 	err = 0;
 	i = 0;
 	final = NULL;
@@ -83,13 +85,8 @@ int	stack_init(char *str, t_list **stack, int args)
 	i = 0;
 	err_check = 0;
 	numbers = ft_split(str, ' ');
-	if (!numbers)
-	{
-		if (args == 1)
-			return (free(str), 1);
-		else
-			return (1);
-	}
+	if (!numbers || !stack)
+		return (ft_error(stack, str, args, numbers));
 	while (numbers[i])
 	{
 		if (ft_overflow(numbers[i]) || err_check > 0)

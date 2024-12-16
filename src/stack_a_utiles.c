@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:54:31 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 11:48:36 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 11:27:03 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int	ft_buffer(char *s)
 {
 	int	len;
 
+	if (!s)
+		return (0);
 	len = ft_strlen(s);
 	if (len >= ft_strlen("18446744073709551616"))
 		return (1);
