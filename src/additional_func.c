@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:01:01 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 11:46:28 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 11:19:37 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,18 @@ void	ft_putstr(char *s)
 	while (s[i])
 	{
 		write(1, s + i, 1);
+		i++;
+	}
+}
+
+void	print_err(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(2, s + i, 1);
 		i++;
 	}
 }

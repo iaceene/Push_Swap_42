@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 11:14:36 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 11:17:50 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_init(int c, char **v, t_list **stack_a)
 		check_err++;
 	check_err += ft_stack_checker(stack_a);
 	if (check_err >= 1)
-		ft_putstr("Error\n");
+		print_err("Error\n");
 	return (check_err);
 }
 
