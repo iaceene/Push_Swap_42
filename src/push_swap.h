@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 11:45:33 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 11:14:28 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,13 @@ t_list	*ft_lstlast(t_list *head);
 t_list	*ft_addnew(int data);
 int		ft_addback(t_list **head, t_list *new);
 void	ft_lstclear(t_list **lst);
-
+void	ft_free_node(t_list **node);
+/// instrutions functions
+void	ft_swap_stack(t_list **stack);
+void	ft_swap_all(t_list **stack_a, t_list **stack_b);
+void	ft_push(t_list **stack_a, t_list **stack_b);
+void	ft_rotate(t_list **stack);
+void	ft_rotate_all(t_list **stack_a, t_list **stack_b);
+void	ft_reverse_rotate(t_list **stack);
+void	ft_reverse_all(t_list **stack_a, t_list **stack_b);
 #endif
