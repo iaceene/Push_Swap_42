@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:05:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 11:13:57 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:33:11 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	ft_swap_stack(t_list **stack)
 void	ft_push(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
-	t_list	*tmp_next;
 
 	if (!stack_a || !*stack_a || !stack_b)
 		return ;
