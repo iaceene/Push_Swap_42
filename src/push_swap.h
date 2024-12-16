@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 11:19:14 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:15:07 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char	**ft_free(char **splites, int index);
 int		ft_count(char *str, char spliter);
 int		stack_init(char *str, t_list **stack, int args);
 int		stack_init_mult(char **v, t_list **stack_a);
+int		ft_sort_checker(t_list **list);
 long	ft_atol(char *s);
 int		ft_overflow(char *s);
 t_list	*ft_lstlast(t_list *head);

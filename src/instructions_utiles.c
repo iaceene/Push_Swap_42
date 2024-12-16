@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:06:17 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 11:12:47 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:20:35 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,20 @@ void	ft_reverse_all(t_list **stack_a, t_list **stack_b)
 {
 	ft_reverse_rotate(stack_a);
 	ft_reverse_rotate(stack_b);
+}
+
+int	ft_sort_checker(t_list **list)
+{
+	t_list	*tmp;
+
+	if(!list || !*list)
+		return (0);
+	tmp = *list;
+	while (tmp->next)
+	{
+		if (tmp->data > tmp->next->data)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }
