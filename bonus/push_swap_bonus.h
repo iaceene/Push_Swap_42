@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 11:25:07 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:12:47 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ t_list	*ft_addnew(int data);
 int		ft_addback(t_list **head, t_list *new);
 void	ft_lstclear(t_list **lst);
 void	ft_free_node(t_list **node);
+int		stack_b_checker(t_list **stack_b);
+int		ft_lstsize(t_list **lst);
 /// instrutions functions
 void	ft_swap_stack(t_list **stack);
 void	ft_swap_all(t_list **stack_a, t_list **stack_b);
