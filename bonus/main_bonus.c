@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 09:32:20 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 10:31:35 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int c, char **v)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	// atexit(f);
+	//  atexit(f);
 	check_err = ft_init(c, v, &stack_a);
 	if (check_err > 0)
 		return (print_err("Error\n"), ft_lstclear(&stack_a), 1);
@@ -84,6 +84,6 @@ int	main(int c, char **v)
 	if(ft_sort_checker(&stack_a) == 1)
 		ft_putstr("OK\n");
 	else
-		ft_putstr("KO");
+		ft_putstr("KO\n");
 	return (ft_lstclear(&stack_a), ft_lstclear(&stack_b), check_err);
 }
