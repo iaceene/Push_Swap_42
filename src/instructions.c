@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:05:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 19:11:23 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:54:35 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	ft_swap_stack(t_list **stack)
 {
-	t_list	*tmp;
-	t_list	*netmp;
+	t_list	*first;
+	t_list	*second;
 
-	if (!stack || !*stack || ft_lstsize(stack) == 1)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	netmp = (*stack)->next->next;
-	tmp = *stack;
-	*stack = (*stack)->next;
-	(*stack)->next = tmp;
-	tmp->next = netmp;
+	first = *stack;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	*stack = second;
 }
 
 void	ft_push(t_list **stack_a, t_list **stack_b)
@@ -56,16 +56,16 @@ void	ft_push(t_list **stack_a, t_list **stack_b)
 
 void	ft_rotate(t_list **stack)
 {
-	t_list	*tmp;
-	t_list	*lst;
+	t_list	*first;
+	t_list	*last;
 
-	if (!stack || !*stack || ft_lstsize(stack) == 1)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	tmp = *stack;
-	lst = ft_lstlast(*stack);
-	*stack = (*stack)->next;
-	lst->next = tmp;
-	tmp->next = NULL;
+	first = *stack;
+	last = ft_lstlast(*stack);
+	*stack = first->next;
+	first->next = NULL;
+	last->next = first;
 }
 
 void	ft_reverse_rotate(t_list **stack)
