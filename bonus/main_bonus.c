@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 18:47:46 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:33:58 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,6 @@ int	ft_mult_check(char **v, int c)
 		i++;
 	}
 	return (1);
-}
-
-void	ft_print_list(t_list *stack)
-{
-	t_list	*tmp;
-
-	tmp = stack;
-	printf("stack : ");
-	while (tmp)
-	{
-		printf("%d ", tmp->data);
-		tmp = tmp->next;
-	}
-	printf("\n");
 }
 
 int	ft_init(int c, char **v, t_list **stack_a)
@@ -61,18 +47,12 @@ int	ft_init(int c, char **v, t_list **stack_a)
 	return (check_err);
 }
 
-void	vk(void)
-{
-	system("leaks checker");
-}
-
 int	main(int c, char **v)
 {
 	int		check_err;
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	atexit(vk);
 	stack_a = NULL;
 	stack_b = NULL;
 	if (c == 1)

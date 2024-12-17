@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:05:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 20:33:11 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:11:23 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_swap_stack(t_list **stack)
 	t_list	*tmp;
 	t_list	*netmp;
 
-	if (!stack || !*stack)
+	if (!stack || !*stack || ft_lstsize(stack) == 1)
 		return ;
 	netmp = (*stack)->next->next;
 	tmp = *stack;
@@ -59,7 +59,7 @@ void	ft_rotate(t_list **stack)
 	t_list	*tmp;
 	t_list	*lst;
 
-	if (!stack || !*stack)
+	if (!stack || !*stack || ft_lstsize(stack) == 1)
 		return ;
 	tmp = *stack;
 	lst = ft_lstlast(*stack);
@@ -73,7 +73,7 @@ void	ft_reverse_rotate(t_list **stack)
 	t_list	*last;
 	t_list	*cur;
 
-	if (!stack || !*stack)
+	if (!stack || !*stack || ft_lstsize(stack) == 1)
 		return ;
 	last = *stack;
 	cur = NULL;

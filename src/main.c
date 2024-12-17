@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 19:03:17 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:31:39 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ int	ft_mult_check(char **v, int c)
 	return (1);
 }
 
-void	ft_print_list(t_list *stack)
-{
-	t_list	*tmp;
+// void	ft_print_list(t_list *stack)
+// {
+// 	t_list	*tmp;
 
-	tmp = stack;
-	printf("stack : ");
-	while (tmp)
-	{
-		printf("%d ", tmp->data);
-		tmp = tmp->next;
-	}
-	printf("\n");
-}
+// 	tmp = stack;
+// 	printf("stack : ");
+// 	while (tmp)
+// 	{
+// 		printf("%d ", tmp->data);
+// 		tmp = tmp->next;
+// 	}
+// 	printf("\n");
+// }
 
 int	ft_init(int c, char **v, t_list **stack_a)
 {
@@ -57,36 +57,13 @@ int	ft_init(int c, char **v, t_list **stack_a)
 	{
 		if (ft_stack_checker(stack_a) == 1)
 			return (1);
-		else if (ft_sort_checker(stack_a) == 1)
-			return (-1);
 	}
 	return (check_err);
 }
 
-void	aff(t_list *stack_a, t_list *stack_b, int size)
+void	vk(void)
 {
-	printf("------Start-----\n");
-	while (size)
-	{
-		if (stack_a)
-		{
-			printf("%5d| \t", stack_a->data);
-			stack_a = stack_a->next;
-		}
-		else
-		{
-			printf("  |   \t");
-		}
-		if (stack_b)
-		{
-			printf("%5d|", stack_b->data);
-			stack_b = stack_b->next;
-		}
-		size--;
-		printf("\n");
-	}
-	printf("   -\t    -\n   a\t    b\n");
-	printf("------End-----\n");
+	system("leaks checker");
 }
 
 int	main(int c, char **v)
@@ -95,15 +72,17 @@ int	main(int c, char **v)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
+	atexit(vk);
 	stack_a = NULL;
 	stack_b = NULL;
-	// atexit(f);
+	if (c == 1)
+		return (0);
 	check_err = ft_init(c, v, &stack_a);
 	if (check_err > 0)
 		return (print_err("Error\n"), ft_lstclear(&stack_a), 1);
-	else if (check_err == -1)
-		return (ft_lstclear(&stack_a), 0);
-	// ft_print_list(stack_a);
-	aff(stack_a, stack_b, 10);
+	check_err += ft_push_swap(&stack_a, &stack_b);
+	if (check_err != 0)
+		return (print_err("Error\n"), ft_lstclear(&stack_a),
+			ft_lstclear(&stack_b), 1);
 	return (ft_lstclear(&stack_a), ft_lstclear(&stack_b), check_err);
 }

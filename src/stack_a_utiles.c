@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:54:31 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 11:27:03 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:11:05 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,24 +49,12 @@ t_list	*ft_addnew(int data)
 	return (new);
 }
 
-int	ft_buffer(char *s)
-{
-	int	len;
-
-	if (!s)
-		return (0);
-	len = ft_strlen(s);
-	if (len >= ft_strlen("18446744073709551616"))
-		return (1);
-	return (0);
-}
-
 int	ft_overflow(char *s)
 {
 	long	n;
 
 	n = ft_atol(s);
-	if (n > INT_MAX || n < INT_MIN || ft_buffer(s))
+	if (n == (long)INT_MAX + 2)
 		return (1);
 	return (0);
 }

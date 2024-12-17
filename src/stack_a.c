@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:02:45 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 12:12:21 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:11:10 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	stack_init_mult(char **v, t_list **stack)
 		tmp = final;
 		final = ft_strjoin(final, v[i]);
 		if (!final)
-			return (1);
+			return (free(tmp), 1);
 		free(tmp);
 		i++;
 	}
