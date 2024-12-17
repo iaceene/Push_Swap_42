@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 08:54:43 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 09:32:20 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ int	ft_init(int c, char **v, t_list **stack_a)
 	{
 		if (ft_stack_checker(stack_a) == 1)
 			return (1);
-		else if (ft_sort_checker(stack_a) == 1)
-			return (-1);
 	}
 	return (check_err);
 }
@@ -66,32 +64,6 @@ int	ft_init(int c, char **v, t_list **stack_a)
 void	f(void)
 {
 	system("leaks a.out");
-}
-
-void    aff(t_list *stack_a, t_list *stack_b, int size)
-{
-    printf("------Start-----\n");
-    while (size)
-    {
-        if (stack_a)
-        {
-            printf("%5d| \t", stack_a->data);
-            stack_a = stack_a->next;
-        }
-        else
-        {
-            printf("  |   \t");
-        }
-        if (stack_b)
-        {
-            printf("%5d|", stack_b->data);
-            stack_b = stack_b->next;
-        }
-        size--;
-        printf("\n");
-    }
-    printf("   -\t    -\n   a\t    b\n");
-    printf("------End-----\n");
 }
 
 int	main(int c, char **v)
@@ -106,9 +78,12 @@ int	main(int c, char **v)
 	check_err = ft_init(c, v, &stack_a);
 	if (check_err > 0)
 		return (print_err("Error\n"), ft_lstclear(&stack_a), 1);
-	else if (check_err == -1)
-		return (ft_lstclear(&stack_a), 0);
-	// ft_print_list(stack_a);
-	// aff(stack_a, stack_b, 10);
+	check_err += ft_instructions(&stack_a, &stack_b);
+	if(check_err != 0)
+		return (print_err("Error\n"), ft_lstclear(&stack_a), ft_lstclear(&stack_b), 1);
+	if(ft_sort_checker(&stack_a) == 1)
+		ft_putstr("OK\n");
+	else
+		ft_putstr("KO");
 	return (ft_lstclear(&stack_a), ft_lstclear(&stack_b), check_err);
 }
