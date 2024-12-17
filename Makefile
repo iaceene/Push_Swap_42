@@ -24,13 +24,13 @@ SRC = ./src/additional_func.c \
 		./src/main_utiles.c \
 		./src/stack_a_utiles.c
 
-INCLUD = ./src/push_swap.h
 BONUS_INCLUD = ./bonus/push_swap_bonus.h
-
-NAME = push_swap
 BONUS_NAME = checker
-OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
+
+INCLUD = ./src/push_swap.h
+NAME = push_swap
+OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
