@@ -6,12 +6,12 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 09:28:20 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 11:25:07 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H_BONUS
-# define PUSH_SWAP_H_BONUS
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 # include <stdlib.h>
 # include <unistd.h>
 # include <libc.h>

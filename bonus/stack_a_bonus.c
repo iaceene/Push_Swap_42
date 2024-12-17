@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:02:45 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 08:55:00 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 11:35:02 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_error(t_list **stack, char *str, int args, char **splite)
 {
 	int	n;
 
-	if(!splite)
+	if (!splite)
 		return (1);
 	n = ft_count(str, ' ');
 	ft_free(splite, n);

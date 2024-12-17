@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 10:31:35 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 11:26:08 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,6 @@ int	ft_init(int c, char **v, t_list **stack_a)
 	return (check_err);
 }
 
-void	f(void)
-{
-	system("leaks a.out");
-}
-
 int	main(int c, char **v)
 {
 	int		check_err;
@@ -74,14 +69,14 @@ int	main(int c, char **v)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	//  atexit(f);
 	check_err = ft_init(c, v, &stack_a);
 	if (check_err > 0)
 		return (print_err("Error\n"), ft_lstclear(&stack_a), 1);
 	check_err += ft_instructions(&stack_a, &stack_b);
-	if(check_err != 0)
-		return (print_err("Error\n"), ft_lstclear(&stack_a), ft_lstclear(&stack_b), 1);
-	if(ft_sort_checker(&stack_a) == 1)
+	if (check_err != 0)
+		return (print_err("Error\n"),
+			ft_lstclear(&stack_a), ft_lstclear(&stack_b), 1);
+	if (ft_sort_checker(&stack_a) == 1)
 		ft_putstr("OK\n");
 	else
 		ft_putstr("KO\n");

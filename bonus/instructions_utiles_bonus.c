@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:06:17 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 08:54:40 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 11:35:41 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_sort_checker(t_list **list)
 {
 	t_list	*tmp;
 
-	if(!list || !*list)
+	if (!list || !*list)
 		return (0);
 	tmp = *list;
 	while (tmp->next)
