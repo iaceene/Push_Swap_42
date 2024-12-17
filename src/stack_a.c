@@ -68,7 +68,7 @@ int	ft_error(t_list **stack, char *str, int args, char **splite)
 {
 	int	n;
 
-	if(!splite)
+	if (!splite)
 		return (1);
 	n = ft_count(str, ' ');
 	ft_free(splite, n);

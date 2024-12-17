@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:01:58 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 08:54:32 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:02:30 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ long	ft_atol(char *s)
 
 	if (!s)
 		return (0);
-	i = 0;
-	res = 0;
-	sing = 1;
+	(1) && (i = 0, res = 0, sing = 1);
 	while (is_space(s[i]))
 		i++;
 	if (s[i] == '+' || s[i] == '-')
@@ -34,6 +32,9 @@ long	ft_atol(char *s)
 	while (is_number(s[i]))
 	{
 		res = (res * 10) + (s[i] - '0');
+		if ((sing == 1 && res > INT_MAX) || (sing == -1 && res > (long)INT_MAX
+				+ 1))
+			return ((long)INT_MAX + 2);
 		i++;
 	}
 	return (res * sing);

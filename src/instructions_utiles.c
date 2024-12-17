@@ -43,7 +43,7 @@ int	ft_sort_checker(t_list **list)
 {
 	t_list	*tmp;
 
-	if(!list || !*list)
+	if (!list || !*list)
 		return (0);
 	tmp = *list;
 	while (tmp->next)

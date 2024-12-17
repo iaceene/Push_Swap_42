@@ -36,9 +36,8 @@ int	valid_sing(char *s, int index)
 {
 	if (s[index] != '+' && s[index] != '-')
 		return (0);
-	else if ((s[index] == '+' && !is_number(s[index + 1]))
-		|| (s[index] == '-' && !is_number(s[index + 1]))
-		|| (is_number(s[index - 1])))
+	else if ((s[index] == '+' && !is_number(s[index + 1])) || (s[index] == '-'
+			&& !is_number(s[index + 1])) || (is_number(s[index - 1])))
 		return (0);
 	return (1);
 }

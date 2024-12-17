@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
 #include "get_next_line_bonus.h"
+#include "push_swap_bonus.h"
 
 void	ft_lstclear(t_list **lst)
 {
@@ -39,7 +39,7 @@ int	ft_lstsize(t_list **lst)
 	while (tmp)
 	{
 		size++;
-		tmp = tmp -> next;
+		tmp = tmp->next;
 	}
 	return (size);
 }

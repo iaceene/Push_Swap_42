@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
 #include "get_next_line_bonus.h"
+#include "push_swap_bonus.h"
 
 int	ft_strcmp(char *str1, char *str2)
 {

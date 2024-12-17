@@ -17,7 +17,7 @@ t_list	*ft_lstlast(t_list *head)
 	if (!head)
 		return (NULL);
 	while (head && head->next)
-		head = head -> next;
+		head = head->next;
 	return (head);
 }
 
@@ -32,7 +32,7 @@ int	ft_addback(t_list **head, t_list *new)
 	else
 	{
 		last_node = ft_lstlast(*head);
-		last_node -> next = new;
+		last_node->next = new;
 	}
 	return (0);
 }

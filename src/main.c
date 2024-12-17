@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 10:37:04 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:03:17 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,35 +63,30 @@ int	ft_init(int c, char **v, t_list **stack_a)
 	return (check_err);
 }
 
-void	f(void)
+void	aff(t_list *stack_a, t_list *stack_b, int size)
 {
-	system("leaks a.out");
-}
-
-void    aff(t_list *stack_a, t_list *stack_b, int size)
-{
-    printf("------Start-----\n");
-    while (size)
-    {
-        if (stack_a)
-        {
-            printf("%5d| \t", stack_a->data);
-            stack_a = stack_a->next;
-        }
-        else
-        {
-            printf("  |   \t");
-        }
-        if (stack_b)
-        {
-            printf("%5d|", stack_b->data);
-            stack_b = stack_b->next;
-        }
-        size--;
-        printf("\n");
-    }
-    printf("   -\t    -\n   a\t    b\n");
-    printf("------End-----\n");
+	printf("------Start-----\n");
+	while (size)
+	{
+		if (stack_a)
+		{
+			printf("%5d| \t", stack_a->data);
+			stack_a = stack_a->next;
+		}
+		else
+		{
+			printf("  |   \t");
+		}
+		if (stack_b)
+		{
+			printf("%5d|", stack_b->data);
+			stack_b = stack_b->next;
+		}
+		size--;
+		printf("\n");
+	}
+	printf("   -\t    -\n   a\t    b\n");
+	printf("------End-----\n");
 }
 
 int	main(int c, char **v)
