@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_list.c                                       :+:      :+:    :+:   */
+/*   ft_atol_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/15 05:39:43 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/15 05:39:44 by yaajagro         ###   ########.fr       */
+/*   Created: 2024/12/15 03:01:58 by yaajagro          #+#    #+#             */
+/*   Updated: 2024/12/17 08:54:32 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	ft_lstclear(t_list **lst)
+long	ft_atol(char *s)
 {
-	t_list	*tmp;
+	int		i;
+	int		sing;
+	long	res;
 
-	if (!lst || !(*lst))
-		return ;
-	while ((*lst))
+	if (!s)
+		return (0);
+	i = 0;
+	res = 0;
+	sing = 1;
+	while (is_space(s[i]))
+		i++;
+	if (s[i] == '+' || s[i] == '-')
 	{
-		tmp = (*lst)->next;
-		free((*lst));
-		(*lst) = tmp;
+		if (s[i] == '-')
+			sing = -1;
+		i++;
 	}
+	while (is_number(s[i]))
+	{
+		res = (res * 10) + (s[i] - '0');
+		i++;
+	}
+	return (res * sing);
 }

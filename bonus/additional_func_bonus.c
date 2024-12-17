@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   additional_func.c                                  :+:      :+:    :+:   */
+/*   additional_func_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:01:01 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/16 12:02:00 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/17 08:54:26 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	ft_putstr(char *s)
 {
