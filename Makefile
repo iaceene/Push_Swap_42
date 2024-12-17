@@ -24,7 +24,7 @@ SRC = ./src/additional_func.c \
 		./src/main_utiles.c \
 		./src/stack_a_utiles.c
 
-BONUS_INCLUD = ./bonus/push_swap_bonus.h
+BONUS_INCLUD = ./bonus/push_swap_bonus.h ./bonus/get_next_line_bonus.h
 BONUS_NAME = checker
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
