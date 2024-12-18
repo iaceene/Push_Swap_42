@@ -22,7 +22,8 @@ SRC = ./src/additional_func.c \
 		./src/ft_splite.c \
 		./src/instructions_utiles.c \
 		./src/main_utiles.c \
-		./src/stack_a_utiles.c
+		./src/stack_a_utiles.c \
+		./src/push_swap_utiles.c
 
 BONUS_INCLUD = ./bonus/push_swap_bonus.h ./bonus/get_next_line_bonus.h
 BONUS_NAME = checker

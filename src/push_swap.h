@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/18 10:19:53 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/18 17:11:24 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ void	ft_rotate(t_list **stack, int c);
 void	ft_rotate_all(t_list **stack_a, t_list **stack_b);
 void	ft_reverse_rotate(t_list **stack, int c);
 void	ft_reverse_all(t_list **stack_a, t_list **stack_b);
-// checker
+// logic
 int		ft_push_swap(t_list **stack_a, t_list **stack_b);
+int		find_min_index(t_list **stack);
+int		find_max_index(t_list **stack);
+void	ft_push_min(t_list **stack_a, t_list **stack_b);
 
 #endif

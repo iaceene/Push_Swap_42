@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/18 09:36:53 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/18 17:50:42 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,6 @@ int	ft_mult_check(char **v, int c)
 	}
 	return (1);
 }
-
-// void	ft_print_list(t_list *stack)
-// {
-// 	t_list	*tmp;
-
-// 	tmp = stack;
-// 	printf("stack : ");
-// 	while (tmp)
-// 	{
-// 		printf("%d ", tmp->data);
-// 		tmp = tmp->next;
-// 	}
-// 	printf("\n");
-// }
 
 int	ft_init(int c, char **v, t_list **stack_a)
 {
