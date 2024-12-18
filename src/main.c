@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/18 17:50:42 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/18 18:45:13 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,7 @@ int	main(int c, char **v)
 		return (print_err("Error\n"), ft_lstclear(&stack_a), 1);
 	else if (ft_sort_checker(&stack_a) == 1 || ft_lstsize(&stack_a) == 1)
 		return (ft_lstclear(&stack_a), ft_lstclear(&stack_b), 0);
+	
 	check_err += ft_push_swap(&stack_a, &stack_b);
-	if (check_err != 0)
-		return (ft_lstclear(&stack_a), ft_lstclear(&stack_b), 1);
 	return (ft_lstclear(&stack_a), ft_lstclear(&stack_b), check_err);
 }

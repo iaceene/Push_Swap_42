@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 09:23:57 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/18 17:11:07 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/18 18:11:21 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	ft_sort_three(t_list **stack_a)
 		ft_swap_stack(stack_a, 1);
 	return (0);
 }
-
 
 int ft_sort_five(t_list **stack_a, t_list **stack_b)
 {
@@ -53,6 +52,7 @@ int	ft_push_swap(t_list **stack_a, t_list **stack_b)
 		return (ft_sort_three(stack_a));
 	else if (size >= 4 && size < 6)
 		return (ft_sort_five(stack_a, stack_b));
+	
 	if (!*stack_b)
 		return (0);
 	return (0);
