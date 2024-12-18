@@ -6,13 +6,13 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:05:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 19:54:35 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/18 10:21:24 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap_stack(t_list **stack)
+void	ft_swap_stack(t_list **stack, int c)
 {
 	t_list	*first;
 	t_list	*second;
@@ -24,9 +24,13 @@ void	ft_swap_stack(t_list **stack)
 	first->next = second->next;
 	second->next = first;
 	*stack = second;
+	if (c == 1)
+		ft_putstr("sa\n");
+	else if (c == 2)
+		ft_putstr("sb\n");
 }
 
-void	ft_push(t_list **stack_a, t_list **stack_b)
+void	ft_push(t_list **stack_a, t_list **stack_b, int c)
 {
 	t_list	*tmp;
 
@@ -52,9 +56,13 @@ void	ft_push(t_list **stack_a, t_list **stack_b)
 		*stack_a = (*stack_a)->next;
 		ft_free_node(&tmp);
 	}
+	if (c == 1)
+		ft_putstr("pa\n");
+	else if (c == 2)
+		ft_putstr("pb\n");
 }
 
-void	ft_rotate(t_list **stack)
+void	ft_rotate(t_list **stack, int c)
 {
 	t_list	*first;
 	t_list	*last;
@@ -66,9 +74,13 @@ void	ft_rotate(t_list **stack)
 	*stack = first->next;
 	first->next = NULL;
 	last->next = first;
+	if (c == 1)
+		ft_putstr("ra\n");
+	else if (c == 2)
+		ft_putstr("rb\n");
 }
 
-void	ft_reverse_rotate(t_list **stack)
+void	ft_reverse_rotate(t_list **stack, int c)
 {
 	t_list	*last;
 	t_list	*cur;
@@ -85,4 +97,8 @@ void	ft_reverse_rotate(t_list **stack)
 	cur->next = NULL;
 	last->next = *stack;
 	*stack = last;
+	if (c == 1)
+		ft_putstr("rra\n");
+	else if (c == 2)
+		ft_putstr("rrb\n");
 }
