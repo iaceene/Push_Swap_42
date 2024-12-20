@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 09:23:57 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/18 18:11:21 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/20 11:45:23 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_sort_three(t_list **stack_a)
 
 int ft_sort_five(t_list **stack_a, t_list **stack_b)
 {
-	if (!*stack_a || !stack_a)
+	if (!stack_a || !*stack_a)
 		return (1);
 	while (ft_lstsize(stack_a) > 3)
 		ft_push_min(stack_a, stack_b);
@@ -43,9 +43,9 @@ int	ft_push_swap(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 
-	size = ft_lstsize(stack_a);
-	if (!*stack_a || !stack_a)
+	if (!stack_a || !*stack_a)
 		return (1);
+	size = ft_lstsize(stack_a);
 	if (size == 2)
 		ft_swap_stack (stack_a, 1);
 	else if (size == 3)

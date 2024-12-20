@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_utiles.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/20 11:45:05 by yaajagro          #+#    #+#             */
+/*   Updated: 2024/12/20 11:45:06 by yaajagro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 
@@ -34,7 +46,7 @@ int find_min_index(t_list **stack)
 	int		index;
 	t_list	*tmp;
 	
-	if (!*stack || !stack)
+	if (!stack || !*stack)
 		return (-1);
 	tmp = *stack;
 	min = tmp->data;
