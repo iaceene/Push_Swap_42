@@ -6,12 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 09:23:57 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/20 11:45:23 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/20 11:46:45 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "stdio.h"
 
 int	ft_sort_three(t_list **stack_a)
 {
