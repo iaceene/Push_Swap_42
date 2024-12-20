@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 09:23:57 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 18:35:14 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:17:42 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int	ft_instructions(t_list **stack_a, t_list **stack_b)
 	char	*buffer;
 	int		err;
 
+	if (!stack_a || !stack_b)
+		return (1);
 	err = 0;
 	buffer = get_next_line(0);
 	while (buffer)
