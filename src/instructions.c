@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:05:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/18 18:18:09 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/21 20:27:56 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ void	ft_swap_stack(t_list **stack, int c)
 		ft_putstr("sa\n");
 	else if (c == 2)
 		ft_putstr("sb\n");
+}
+
+void	ft_print_instruc(int c)
+{
+	if (c == 1)
+		ft_putstr("pa\n");
+	else
+		ft_putstr("pb\n");
 }
 
 void	ft_push(t_list **stack_a, t_list **stack_b, int c)
@@ -56,10 +64,7 @@ void	ft_push(t_list **stack_a, t_list **stack_b, int c)
 		*stack_a = (*stack_a)->next;
 		ft_free_node(&tmp);
 	}
-	if (c == 1)
-		ft_putstr("pa\n");
-	else if (c == 2)
-		ft_putstr("pb\n");
+	ft_print_instruc(c);
 }
 
 void	ft_rotate(t_list **stack, int c)

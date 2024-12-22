@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 02:59:04 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/18 18:45:13 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/21 20:18:25 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,6 @@ int	ft_init(int c, char **v, t_list **stack_a)
 	return (check_err);
 }
 
-void	vk(void)
-{
-	system("leaks checker");
-}
-
 int	main(int c, char **v)
 {
 	int		check_err;
@@ -67,7 +62,6 @@ int	main(int c, char **v)
 		return (print_err("Error\n"), ft_lstclear(&stack_a), 1);
 	else if (ft_sort_checker(&stack_a) == 1 || ft_lstsize(&stack_a) == 1)
 		return (ft_lstclear(&stack_a), ft_lstclear(&stack_b), 0);
-	
 	check_err += ft_push_swap(&stack_a, &stack_b);
 	return (ft_lstclear(&stack_a), ft_lstclear(&stack_b), check_err);
 }

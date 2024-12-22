@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:05:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 19:54:20 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/21 20:17:32 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	ft_rotate(t_list **stack)
 	first->next = NULL;
 	last->next = first;
 }
-
 
 void	ft_reverse_rotate(t_list **stack)
 {

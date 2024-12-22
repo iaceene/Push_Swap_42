@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/20 11:47:12 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/21 20:28:36 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h> // please remove me !!!
 # include <limits.h>
 
 typedef struct s_list
 {
 	int				data;
 	int				index;
+	int				rank;
 	struct s_list	*next;
 }	t_list;
 
@@ -61,5 +61,11 @@ int		ft_push_swap(t_list **stack_a, t_list **stack_b);
 int		find_min_index(t_list **stack);
 int		find_max_index(t_list **stack);
 void	ft_push_min(t_list **stack_a, t_list **stack_b);
+// sort 100 && 500
+void	push_to_b(t_list **stack_a, t_list **stack_b);
+int		get_index(t_list *stack, int rank);
+void	push_to_a(t_list **stack_a, t_list **stack_b);
+int		get_count(t_list *lst, int num);
+void	index_it(t_list *stack);
 
 #endif
