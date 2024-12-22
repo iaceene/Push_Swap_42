@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 19:46:40 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/21 20:24:09 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/22 15:22:47 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	push_to_b(t_list **stack_a, t_list **stack_b)
 
 	i = 0;
 	size = ft_lstsize(stack_a);
-	if (size > 120)
+	if (size > 100)
 		j = size / 15;
 	else
 		j = size / 7;
@@ -66,7 +66,7 @@ void	push_to_a(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 
-	index_it(*stack_b);
+	rank_stack(*stack_b);
 	while (*stack_b)
 	{
 		size = ft_lstsize(stack_b);
