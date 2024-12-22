@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 19:46:40 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/22 16:01:00 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/22 19:32:24 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,17 @@ void	push_to_a(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 
+	size = ft_lstsize(stack_b);
 	rank_stack(*stack_b);
 	while (*stack_b)
 	{
-		size = ft_lstsize(stack_b);
 		if (get_index(stack_b, size - 1) > size / 2)
-		{
 			while ((*stack_b)->rank != size - 1)
 				ft_reverse_rotate(stack_b, 2);
-		}
 		else
-		{
 			while ((*stack_b)->rank != size - 1)
 				ft_rotate(stack_b, 2);
-		}
 		ft_push(stack_b, stack_a, 1);
+		size--;
 	}
 }
