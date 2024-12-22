@@ -6,94 +6,70 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 20:31:13 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/21 20:33:15 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/22 16:01:22 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_max_index(t_list **stack)
+void	rank_stack(t_list *stack)
 {
-	int		max;
-	int		i;
-	int		index;
-	t_list	*tmp;
+	t_list	*f;
 
-	if (!*stack || !stack)
-		return (-1);
-	tmp = *stack;
-	max = 0;
-	i = 0;
-	index = 0;
-	while (tmp)
+	f = stack;
+	while (stack)
 	{
-		if (tmp->data > max)
-		{
-			max = tmp->data;
-			index = i;
-		}
-		i++;
-		tmp = tmp->next;
+		stack->rank = get_count(&f, stack->data);
+		stack = stack->next;
 	}
-	return (index);
 }
 
-int	find_min_index(t_list **stack)
+int	get_index(t_list **stack, int rank)
 {
-	int		min;
-	int		i;
-	int		index;
+	int		count;
 	t_list	*tmp;
 
-	if (!*stack || !stack)
-		return (-1);
+	count = 0;
 	tmp = *stack;
-	min = tmp->data;
-	i = 0;
-	index = 0;
 	while (tmp)
 	{
-		if (tmp->data < min)
-		{
-			min = tmp->data;
-			index = i;
-		}
-		i++;
-		tmp = tmp->next;
+		if (tmp -> rank == rank)
+			return (count);
+		count++;
+		tmp = tmp -> next;
 	}
-	return (index);
+	return (-1);
 }
 
-int	find_min(t_list **stack)
+int	get_count(t_list **stack, int num)
 {
+	int		count;
 	t_list	*tmp;
-	int		min;
 
 	tmp = *stack;
-	min = tmp->data;
+	count = 0;
 	while (tmp)
 	{
-		if (tmp->data < min)
-			min = tmp->data;
-		tmp = tmp->next;
+		if (tmp->data < num)
+			count++;
+		tmp = tmp ->next;
 	}
-	return (min);
+	return (count);
 }
 
 void	ft_push_min(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 	int	index;
-	int	min;
 
-	min = find_min(stack_a);
-	index = find_min_index(stack_a);
+	rank_stack(*stack_a);
+	index = get_index(stack_a, 0);
 	size = ft_lstsize(stack_a);
-	if (index < size / 2 && (*stack_a)->data != min)
-		while ((*stack_a)->data != min)
+	if (index < size / 2 && (*stack_a)->rank != 0)
+		while ((*stack_a)->rank != 0)
 			ft_rotate(stack_a, 1);
 	else
-		while ((*stack_a)->data != min)
+		while ((*stack_a)->rank != 0)
 			ft_reverse_rotate(stack_a, 1);
 	ft_push(stack_a, stack_b, 2);
 }

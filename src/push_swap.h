@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/22 15:10:52 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/22 15:49:58 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ int		find_max_index(t_list **stack);
 void	ft_push_min(t_list **stack_a, t_list **stack_b);
 // sort 100 && 500
 void	push_to_b(t_list **stack_a, t_list **stack_b);
-int		get_index(t_list *stack, int rank);
+int		get_index(t_list **stack, int rank);
 void	push_to_a(t_list **stack_a, t_list **stack_b);
-int		get_count(t_list *lst, int num);
+int		get_count(t_list **stack, int num);
 void	rank_stack(t_list *stack);
 
 #endif
