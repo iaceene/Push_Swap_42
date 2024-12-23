@@ -18,18 +18,18 @@ long	ft_atol(char *s)
 	int		sing;
 	long	res;
 
-	if (!s)
-		return (0);
-	(1) && (i = 0, res = 0, sing = 1);
-	while (is_space(s[i]))
+	i = 0;
+	res = 0;
+	sing = 1;
+	while (s && is_space(s[i]))
 		i++;
-	if (s[i] == '+' || s[i] == '-')
+	if (s && (s[i] == '+' || s[i] == '-'))
 	{
 		if (s[i] == '-')
 			sing = -1;
 		i++;
 	}
-	while (is_number(s[i]))
+	while (s && is_number(s[i]))
 	{
 		res = (res * 10) + (s[i] - '0');
 		if ((sing == 1 && res > INT_MAX) || (sing == -1 && res > (long)INT_MAX
