@@ -45,7 +45,7 @@ int	ft_stack_checker(t_list **head)
 	t_list	*tmp;
 	t_list	*curr;
 
-	if (!*head || !head)
+	if (!head || !*head)
 		return (1);
 	tmp = *head;
 	while (tmp)
