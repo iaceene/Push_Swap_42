@@ -39,6 +39,13 @@ int	ft_sort_five(t_list **stack_a, t_list **stack_b)
 	return (0);
 }
 
+int	ft_sort_above(t_list **stack_a, t_list **stack_b)
+{
+	push_to_b(stack_a, stack_b);
+	push_to_a(stack_a, stack_b);
+	return (0);
+}
+
 int	ft_push_swap(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
@@ -53,6 +60,6 @@ int	ft_push_swap(t_list **stack_a, t_list **stack_b)
 	else if (size >= 4 && size < 6)
 		return (ft_sort_five(stack_a, stack_b));
 	else
-		return (push_to_b(stack_a, stack_b), push_to_a(stack_a, stack_b), 0);
+		return (ft_sort_above(stack_a, stack_b));
 	return (0);
 }
