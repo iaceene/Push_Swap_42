@@ -16,7 +16,9 @@ int	ft_sort_three(t_list **stack_a)
 {
 	int	max_index;
 
-	rank_stack(*stack_a);
+	if (!stack_a || !*stack_a)
+		return (1);
+	rank_stack(stack_a);
 	max_index = get_index(stack_a, ft_lstsize(stack_a) - 1);
 	if (max_index == 0)
 		ft_rotate(stack_a, 1);
@@ -29,18 +31,20 @@ int	ft_sort_three(t_list **stack_a)
 
 int	ft_sort_five(t_list **stack_a, t_list **stack_b)
 {
-	if (!*stack_a || !stack_a)
+	if (!stack_a || !*stack_a)
 		return (1);
 	while (ft_lstsize(stack_a) > 3)
 		ft_push_min(stack_a, stack_b);
 	ft_sort_three(stack_a);
-	while (ft_lstsize(stack_b) > 0)
+	while (*stack_b)
 		ft_push(stack_b, stack_a, 1);
 	return (0);
 }
 
 int	ft_sort_above(t_list **stack_a, t_list **stack_b)
 {
+	if (!stack_a || !stack_b)
+		return (1);
 	push_to_b(stack_a, stack_b);
 	push_to_a(stack_a, stack_b);
 	return (0);
@@ -50,9 +54,9 @@ int	ft_push_swap(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 
-	size = ft_lstsize(stack_a);
 	if (!stack_a || !*stack_a)
 		return (1);
+	size = ft_lstsize(stack_a);
 	if (size == 2)
 		ft_swap_stack (stack_a, 1);
 	else if (size == 3)

@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-void	rank_stack(t_list *stack)
+void	rank_stack(t_list **stack)
 {
-	t_list	*f;
+	t_list	*tmp;
 
-	f = stack;
-	while (stack)
+	tmp = *stack;
+	while (tmp)
 	{
-		stack->rank = get_count(&f, stack->data);
-		stack = stack->next;
+		tmp->rank = get_count(stack, tmp->data);
+		tmp = tmp->next;
 	}
 }
 
@@ -62,7 +62,7 @@ void	ft_push_min(t_list **stack_a, t_list **stack_b)
 	int	size;
 	int	index;
 
-	rank_stack(*stack_a);
+	rank_stack(stack_a);
 	index = get_index(stack_a, 0);
 	size = ft_lstsize(stack_a);
 	if (index < size / 2 && (*stack_a)->rank != 0)

@@ -39,7 +39,7 @@ void	push_to_b(t_list **stack_a, t_list **stack_b)
 	int	j;
 
 	i = 0;
-	rank_stack(*stack_a);
+	rank_stack(stack_a);
 	size = ft_lstsize(stack_a);
 	if (size > 100)
 		j = size / 15;
@@ -53,7 +53,7 @@ void	push_to_a(t_list **stack_a, t_list **stack_b)
 	int	size;
 
 	size = ft_lstsize(stack_b);
-	rank_stack(*stack_b);
+	rank_stack(stack_b);
 	while (*stack_b)
 	{
 		if (get_index(stack_b, size - 1) > size / 2)

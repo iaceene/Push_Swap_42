@@ -63,6 +63,6 @@ void	push_to_b(t_list **stack_a, t_list **stack_b);
 int		get_index(t_list **stack, int rank);
 void	push_to_a(t_list **stack_a, t_list **stack_b);
 int		get_count(t_list **stack, int num);
-void	rank_stack(t_list *stack);
+void	rank_stack(t_list **stack);
 
 #endif
