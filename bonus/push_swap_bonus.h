@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 19:34:40 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/25 20:52:53 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,38 +22,51 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int		is_space(char c);
-int		is_number(char c);
-int		valid_sing(char *s, int index);
-void	ft_putstr(char *s);
-void	print_err(char *s);
-char	*ft_strdup(char *s);
-int		ft_strlen(char *s);
-int		ft_stack_checker(t_list **stack_a);
-int		ft_check(char *s);
-char	**ft_split(char const *s, char c);
-char	**ft_free(char **splites, int index);
-int		ft_count(char *str, char spliter);
-int		stack_init(char *str, t_list **stack, int args);
-int		stack_init_mult(char **v, t_list **stack_a);
-int		ft_sort_checker(t_list **list);
-long	ft_atol(char *s);
-int		ft_overflow(char *s);
-t_list	*ft_lstlast(t_list *head);
-t_list	*ft_addnew(int data);
-int		ft_addback(t_list **head, t_list *new);
-void	ft_lstclear(t_list **lst);
-void	ft_free_node(t_list **node);
-int		stack_b_checker(t_list **stack_b);
-int		ft_lstsize(t_list **lst);
+typedef struct s_command
+{
+	char				*cmd;
+	struct s_command	*next;
+}	t_command;
+
+int			is_space(char c);
+int			is_number(char c);
+int			valid_sing(char *s, int index);
+void		ft_putstr(char *s);
+void		print_err(char *s);
+char		*ft_strdup(char *s);
+int			ft_strlen(char *s);
+int			ft_stack_checker(t_list **stack_a);
+int			ft_check(char *s);
+char		**ft_split(char const *s, char c);
+char		**ft_free(char **splites, int index);
+int			ft_count(char *str, char spliter);
+int			stack_init(char *str, t_list **stack, int args);
+int			stack_init_mult(char **v, t_list **stack_a);
+int			ft_sort_checker(t_list **list);
+long		ft_atol(char *s);
+int			ft_overflow(char *s);
+t_list		*ft_lstlast(t_list *head);
+t_list		*ft_addnew(int data);
+int			ft_addback(t_list **head, t_list *new);
+void		ft_lstclear(t_list **lst);
+void		ft_free_node(t_list **node);
+int			stack_b_checker(t_list **stack_b);
+int			ft_lstsize(t_list **lst);
 /// instrutions functions
-void	ft_swap_stack(t_list **stack);
-void	ft_swap_all(t_list **stack_a, t_list **stack_b);
-void	ft_push(t_list **stack_a, t_list **stack_b);
-void	ft_rotate(t_list **stack);
-void	ft_rotate_all(t_list **stack_a, t_list **stack_b);
-void	ft_reverse_rotate(t_list **stack);
-void	ft_reverse_all(t_list **stack_a, t_list **stack_b);
+void		ft_swap_stack(t_list **stack);
+void		ft_swap_all(t_list **stack_a, t_list **stack_b);
+void		ft_push(t_list **stack_a, t_list **stack_b);
+void		ft_rotate(t_list **stack);
+void		ft_rotate_all(t_list **stack_a, t_list **stack_b);
+void		ft_reverse_rotate(t_list **stack);
+void		ft_reverse_all(t_list **stack_a, t_list **stack_b);
 // checker
-int		ft_instructions(t_list **stack_a, t_list **stack_b);
+int			ft_instructions(t_list **stack_a, t_list **stack_b);
+int			instruction_app(char *buffer, t_list **stack_a, t_list **stack_b);
+int			ft_exe_ens(t_command *head, t_list **stack_a, t_list **stack_b);
+t_command	*ft_new_cmd(char *buffer);
+t_command	*ft_lstlast_cmd(t_command *head);
+int			ft_addback_cmd(t_command **head, t_command *new);
+
+
 #endif

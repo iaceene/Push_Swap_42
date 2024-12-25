@@ -10,7 +10,8 @@ BONUS_SRC = ./bonus/additional_func_bonus.c \
 			./bonus/get_next_line_bonus.c \
 			./bonus/instructions_bonus.c \
 			./bonus/main_utiles_bonus.c \
-			./bonus/stack_a_utiles_bonus.c
+			./bonus/stack_a_utiles_bonus.c \
+			./bonus/checker_bonus.c
 
 SRC = ./src/additional_func.c \
 		./src/ft_atol.c \
