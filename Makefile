@@ -11,7 +11,7 @@ BONUS_SRC = ./bonus/additional_func_bonus.c \
 			./bonus/instructions_bonus.c \
 			./bonus/main_utiles_bonus.c \
 			./bonus/stack_a_utiles_bonus.c \
-			./bonus/checker_bonus.c
+			./bonus/checker_utile_bonus.c
 
 SRC = ./src/additional_func.c \
 		./src/ft_atol.c \
@@ -27,7 +27,7 @@ SRC = ./src/additional_func.c \
 		./src/push_swap_utiles.c \
 		./src/sort_above.c
 
-BONUS_INCLUD = ./bonus/push_swap_bonus.h ./bonus/get_next_line_bonus.h
+BONUS_INCLUDE = ./bonus/push_swap_bonus.h ./bonus/get_next_line_bonus.h
 BONUS_NAME = checker
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
@@ -49,7 +49,7 @@ $(NAME) : $(OBJ)
 $(BONUS_NAME) : $(BONUS_OBJ)
 	cc $(CFLAGS) $(BONUS_OBJ) -o $(BONUS_NAME)
 
-$(BONUS_OBJ): %.o: %.c $(BONUS_INCLUD)
+$(BONUS_OBJ): %.o: %.c $(BONUS_INCLUDE)
 	cc $(CFLAGS) -c $< -o $@
 
 clean :

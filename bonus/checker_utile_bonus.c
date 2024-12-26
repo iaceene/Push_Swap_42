@@ -6,12 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 20:47:47 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/25 20:48:46 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:13:11 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-
 
 int	instruction_app(char *buffer, t_list **stack_a, t_list **stack_b)
 {
@@ -42,7 +41,7 @@ int	instruction_app(char *buffer, t_list **stack_a, t_list **stack_b)
 	return (0);
 }
 
-int ft_exe_ens(t_command *head, t_list **stack_a, t_list **stack_b)
+int	ft_exe_ens(t_command *head, t_list **stack_a, t_list **stack_b)
 {
 	while (head)
 	{
@@ -54,7 +53,7 @@ int ft_exe_ens(t_command *head, t_list **stack_a, t_list **stack_b)
 
 t_command	*ft_new_cmd(char *buffer)
 {
-	t_command *new;
+	t_command	*new;
 
 	new = malloc(sizeof(t_command));
 	if (!new)
@@ -75,7 +74,7 @@ t_command	*ft_lstlast_cmd(t_command *head)
 	return (head);
 }
 
-int ft_addback_cmd(t_command **head, t_command *new)
+int	ft_addback_cmd(t_command **head, t_command *new)
 {
 	t_command	*last_node;
 

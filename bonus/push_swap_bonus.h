@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/25 20:52:53 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:13:36 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int			ft_check(char *s);
 char		**ft_split(char const *s, char c);
 char		**ft_free(char **splites, int index);
 int			ft_count(char *str, char spliter);
+int			ft_strcmp(char *str1, char *str2);
 int			stack_init(char *str, t_list **stack, int args);
 int			stack_init_mult(char **v, t_list **stack_a);
 int			ft_sort_checker(t_list **list);
@@ -67,6 +68,5 @@ int			ft_exe_ens(t_command *head, t_list **stack_a, t_list **stack_b);
 t_command	*ft_new_cmd(char *buffer);
 t_command	*ft_lstlast_cmd(t_command *head);
 int			ft_addback_cmd(t_command **head, t_command *new);
-
 
 #endif

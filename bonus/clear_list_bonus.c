@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 05:39:43 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 13:22:29 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:08:23 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_lstclear(t_list **lst)
 		free((*lst));
 		(*lst) = tmp;
 	}
+	*lst = NULL;
 }
 
 int	ft_lstsize(t_list **lst)
