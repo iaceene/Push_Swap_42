@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 03:02:45 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/17 19:11:10 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/26 16:34:34 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,18 @@ int	stack_init_mult(char **v, t_list **stack)
 	return (err);
 }
 
-int	ft_error(t_list **stack, char *str, int args, char **splite)
+int	ft_error(char *str, int args, char **splite)
 {
 	int	n;
 
-	if (!splite)
+	if (!splite && args == 1)
+		return (free(str), 1);
+	else if (!splite && args == 0)
 		return (1);
 	n = ft_count(str, ' ');
 	ft_free(splite, n);
 	if (args == 1)
 		free(str);
-	ft_lstclear(stack);
 	return (1);
 }
 
@@ -88,11 +89,11 @@ int	stack_init(char *str, t_list **stack, int args)
 	err_check = 0;
 	numbers = ft_split(str, ' ');
 	if (!numbers || !stack)
-		return (ft_error(stack, str, args, numbers));
+		return (ft_error(str, args, numbers));
 	while (numbers[i])
 	{
 		if (ft_overflow(numbers[i]) || err_check > 0)
-			return (ft_error(stack, str, args, numbers));
+			return (ft_error(str, args, numbers));
 		err_check += ft_addback(stack, ft_addnew(ft_atol(numbers[i])));
 		i++;
 	}
