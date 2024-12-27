@@ -124,5 +124,3 @@ rr
 
 - **Name**: Yassine Ajagrou
 - **1337 School**
-
-This project is part of the 42 curriculum. The code is released under the [42 License](https://github.com/42School/lib42).
