@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-The **Push Swap** project is a data structure and algorithm exercise designed to help students learn about sorting algorithms, stacks, and how to efficiently manage data with limited operations. The main goal is to implement a program that sorts a list of integers using two stacks and a limited set of operations. The challenge lies in sorting the numbers with the fewest operations possible.
+**Push Swap** is a data structure and algorithm exercise designed to help students learn about sorting algorithms, stacks, and how to efficiently manage data with limited operations. The main goal is to implement a program that sorts a list of integers using two stacks and a limited set of operations. The challenge lies in sorting the numbers with the fewest operations possible.
 
 The project emphasizes understanding sorting algorithms, complexity analysis, and optimizing code for both performance and memory usage.
 
