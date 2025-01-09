@@ -49,6 +49,7 @@ The goal of the project is to sort a list of integers using two stacks (`a` and 
 
    ```bash
    make
+   # make bonus 
    ```
 
 2. **Running the program**:  
