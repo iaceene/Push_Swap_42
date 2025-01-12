@@ -25,24 +25,24 @@ void	ft_swap_all(t_list **stack_a, t_list **stack_b)
 {
 	if (!stack_a || !stack_b || !*stack_a || !*stack_b)
 		return ;
-	ft_swap_stack(stack_a, 1);
-	ft_swap_stack(stack_b, 2);
+	ft_swap_stack(stack_a, 3);
+	ft_swap_stack(stack_b, -1);
 }
 
 void	ft_rotate_all(t_list **stack_a, t_list **stack_b)
 {
 	if (stack_a && *stack_a)
-		ft_rotate(stack_a, 1);
+		ft_rotate(stack_a, 3);
 	if (stack_b && *stack_b)
-		ft_rotate(stack_b, 2);
+		ft_rotate(stack_b, -1);
 }
 
 void	ft_reverse_all(t_list **stack_a, t_list **stack_b)
 {
 	if (stack_a && *stack_a)
-		ft_reverse_rotate(stack_a, 1);
+		ft_reverse_rotate(stack_a, 3);
 	if (stack_b && *stack_b)
-		ft_reverse_rotate(stack_b, 2);
+		ft_reverse_rotate(stack_b, -1);
 }
 
 int	ft_sort_checker(t_list **list)

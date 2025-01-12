@@ -28,6 +28,8 @@ void	ft_swap_stack(t_list **stack, int c)
 		ft_putstr("sa\n");
 	else if (c == 2)
 		ft_putstr("sb\n");
+	else if (c == 3)
+		ft_putstr("ss\n");
 }
 
 void	ft_print_instruc(int c)
@@ -83,6 +85,8 @@ void	ft_rotate(t_list **stack, int c)
 		ft_putstr("ra\n");
 	else if (c == 2)
 		ft_putstr("rb\n");
+	else if (c == 3)
+		ft_putstr("rr\n");
 }
 
 void	ft_reverse_rotate(t_list **stack, int c)
@@ -106,4 +110,6 @@ void	ft_reverse_rotate(t_list **stack, int c)
 		ft_putstr("rra\n");
 	else if (c == 2)
 		ft_putstr("rrb\n");
+	else if (c == 3)
+		ft_putstr("rrr\n");
 }
